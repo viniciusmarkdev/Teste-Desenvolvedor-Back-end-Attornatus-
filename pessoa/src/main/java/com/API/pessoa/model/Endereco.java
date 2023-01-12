@@ -80,6 +80,36 @@ public class Endereco {
 
 
 
+	public boolean isEnderecoPrincipal() {
+		return enderecoPrincipal;
+	}
+
+
+
+
+
+
+
+
+	public void setEnderecoPrincipal(boolean enderecoPrincipal) {
+		this.enderecoPrincipal = enderecoPrincipal;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public Endereco() {
 	
 	}

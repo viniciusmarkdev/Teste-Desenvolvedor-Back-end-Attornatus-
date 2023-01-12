@@ -50,7 +50,7 @@ public class EnderecoControllerTest {
 	
 	
 		
-		HttpEntity<Endereco> requisicao = new HttpEntity<Endereco>(new Endereco(0L,false, "Av cantina",12345677,23,"São paulo"));
+		HttpEntity<Endereco> requisicao = new HttpEntity<Endereco>(new Endereco(0L, false, "Av cantina",12345677,23,"São paulo"));
 		
 		ResponseEntity<Endereco> resposta= testRestTemplate.exchange("/endereco",HttpMethod.POST, requisicao ,
 			 Endereco.class);
@@ -58,9 +58,10 @@ public class EnderecoControllerTest {
 		assertEquals(HttpStatus.CREATED, resposta.getStatusCode());
 		assertEquals(requisicao.getBody().getCep(), resposta.getBody().getCep());
 		assertEquals(requisicao.getBody().getCidade(), resposta.getBody().getCidade());
-		assertEquals(requisicao.getBody().getId(), resposta.getBody().getId());
+		
 		assertEquals(requisicao.getBody().getLogradouro(), resposta.getBody().getLogradouro());
 		assertEquals(requisicao.getBody().getNumero(), resposta.getBody().getNumero());
+		assertEquals(requisicao.getBody().isEnderecoPrincipal(), resposta.getBody().isEnderecoPrincipal());
 		
 	
 	}

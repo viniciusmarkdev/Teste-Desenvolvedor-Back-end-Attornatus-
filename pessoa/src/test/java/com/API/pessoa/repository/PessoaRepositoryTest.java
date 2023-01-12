@@ -50,13 +50,13 @@ public class PessoaRepositoryTest {
 		LocalDate data2 = LocalDate.now();
 		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("08/03/2021");
 		String dataFormatada2 = data2.format(formatter1);
-		pessoaRepository.save( new Pessoa(0L, "Adriana Da Silva ", data2));
+		pessoaRepository.save( new Pessoa(0L, "Adriana Da Silva", data2));
 		
 
 		LocalDate data3 = LocalDate.now();
 		DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("08/03/2021");
 		String dataFormatada3 = data3.format(formatter1);
-		pessoaRepository.save( new Pessoa(0L, "Tulio", data3));
+		pessoaRepository.save( new Pessoa(0L, "Carlos", data3));
 		
 	
 		
@@ -68,8 +68,8 @@ public class PessoaRepositoryTest {
 	@Order(1)
 	public void deveRetornarUmaPessoa() {
 		
-    	Optional<Pessoa> pessoa = pessoaRepository.findByNome("Tulio");
-    	assertTrue(pessoa.get().getNome().equals("Tulio"));
+    	Optional<Pessoa> pessoa = pessoaRepository.findByNome("Carlos");
+    	assertTrue(pessoa.get().getNome().equals("Carlos"));
 	}
 
 	
@@ -82,8 +82,9 @@ public class PessoaRepositoryTest {
 		assertEquals(3,listaDePessoas.size());
 		assertTrue(listaDePessoas.get(0).getNome().equals("Tulio Da Silva"));
 		assertTrue(listaDePessoas.get(1).getNome().equals("Dandara Da Silva"));
+		assertTrue(listaDePessoas.get(2).getNome().equals("Adriana Da Silva"));
 		
-		
+			
 	}
 	
 
